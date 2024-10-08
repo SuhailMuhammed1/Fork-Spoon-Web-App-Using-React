@@ -1,6 +1,7 @@
 import { styled } from '@mui/system'
 import { Box, Typography } from '@mui/material'
 import React from 'react'
+import CustomButton from '../CustomButton/CustomButton';
 
 function Header() {
 
@@ -49,12 +50,15 @@ function Header() {
             <NavBarLinksBox>
                 {
                     nav_titles.map((item, index)=>(
-                        <NavBarLink>{item.display}</NavBarLink>
+                        <NavBarLink variant='body2'>{item.display}</NavBarLink>
                     ))
                 }
             </NavBarLinksBox>
         </Box>
-        <Box></Box>
+        <Box>
+            <NavBarLink variant='body2'>Sign Up</NavBarLink>
+            <CustomButton backgroundColor="#0F1B4C" color="#fff" buttonText="Register"/>
+        </Box>
     </Box>
   )
 }
