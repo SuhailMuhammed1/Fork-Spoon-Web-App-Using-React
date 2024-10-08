@@ -2,13 +2,14 @@ import { Button } from '@mui/material';
 import { borderColor, margin, styled, width } from '@mui/system'
 import React from 'react'
 
-function CustomButton() {
-   var backgroundColor,
+function CustomButton({
+    backgroundColor,
     color,
     buttonText,
     welcomeBtn,
     guideBtn,
-    getStartedBtn;
+    getStartedBtn,
+}) {
 
     const CustomButton = styled(Button)(({theme}) => ({
         backgroundColor: backgroundColor,
