@@ -3,6 +3,19 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 import CustomButton from '../CustomButton/CustomButton';
 import logo from '../../assets/img/logo.png'
+import MenuIcon from '@mui/icons-material/Menu'
+import FeaturePlayListIcon from '@mui/icons-material/FeaturedPlayList'
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices'
+import HomeIcon from '@mui/icons-material/Home'
+import ContactsIcon from '@mui/icons-material/Contacts'
+import {
+    Drawer,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+} from '@mui/material';
 
 function Header() {
 
@@ -52,6 +65,15 @@ function Header() {
         },
     }));
 
+    const NavBarMenu = styled(MenuIcon)(({ theme }) => ({
+        cursor: 'pointer',
+        display: 'none',
+        marginRight: theme.spacing(2),
+        [theme.breakpoints.down("md")]: {
+            display: 'block',
+        },
+    }));
+
     return (
         <Box sx={{
             display: 'flex',
@@ -73,6 +95,7 @@ function Header() {
                     display: 'flex',
                     alignItems: 'center',
                 }}>
+                    <NavBarMenu/>
                     <NavBarLogo src={logo} alt="logo" />
                 </Box>
                 <NavBarLinksBox>
