@@ -1,6 +1,6 @@
 import { styled } from '@mui/system'
 import { Box, Typography } from '@mui/material'
-import React from 'react'
+import React,{ useState } from 'react'
 import CustomButton from '../CustomButton/CustomButton';
 import logo from '../../assets/img/logo.png'
 import MenuIcon from '@mui/icons-material/Menu'
@@ -18,6 +18,15 @@ import {
 } from '@mui/material';
 
 function Header() {
+
+    const [mobileMenu, setMobileMenu] = useState({left:false});
+
+    function toogleDrawer(anchor, open, event) {
+        if(event && event.type ==="keydown" && (event.type === "Tab" || event.type === "Shift")){
+            return;
+        }
+        setMobileMenu({...mobileMenu,[anchor]:open});
+    }
 
     const nav_titles = [
         {
@@ -95,7 +104,12 @@ function Header() {
                     display: 'flex',
                     alignItems: 'center',
                 }}>
-                    <NavBarMenu/>
+                    <NavBarMenu onClick={()=>toogleDrawer("left",true)}/>
+                    <Drawer 
+                    anchor='left'
+                    open={mobileMenu["left"]}
+                    onClose={()=>toogleDrawer("left",false)}
+                    ></Drawer>
                     <NavBarLogo src={logo} alt="logo" />
                 </Box>
                 <NavBarLinksBox>
