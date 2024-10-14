@@ -28,6 +28,44 @@ function Header() {
         setMobileMenu({...mobileMenu,[anchor]:open});
     }
 
+    function list(anchor) {
+        return (
+        <box sx={{
+            width: anchor === "top" || anchor === "bottom" ? "auto" : 250
+        }}
+        role= "presentation"
+        onClick={()=>toogleDrawer(anchor, false)}
+        onKeyDown={()=>toogleDrawer(anchor,false)}
+        >
+            <List>
+                {
+                    nav_titles.map((item, index)=>(
+                        <ListItem key={item.index} disablePadding>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            {
+                                index === 0 && <HomeIcon/>
+                            }
+                            {
+                                index === 1 && <FeaturePlayListIcon/>
+                            }
+                            {
+                                index === 2 && <MiscellaneousServicesIcon/>
+                            }
+                            {
+                                index === 3 && <ContactsIcon/>
+                            }
+                        </ListItemIcon>
+                        <ListItemText primary={item.display} />
+                    </ListItemButton>
+                </ListItem>
+                    ))
+                }
+            </List>
+        </box>
+        );
+    }
+
     const nav_titles = [
         {
             path: "/",
@@ -109,7 +147,9 @@ function Header() {
                     anchor='left'
                     open={mobileMenu["left"]}
                     onClose={()=>toogleDrawer("left",false)}
-                    ></Drawer>
+                    >
+                    {list("left")}
+                    </Drawer>
                     <NavBarLogo src={logo} alt="logo" />
                 </Box>
                 <NavBarLinksBox>
