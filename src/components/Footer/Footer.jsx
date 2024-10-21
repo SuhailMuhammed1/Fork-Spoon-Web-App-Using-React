@@ -4,8 +4,11 @@ import React from 'react'
 import fb from '../../assets/img/facebook.png'
 import twitter from '../../assets/img/twitter.png'
 import insta from '../../assets/img/instagram.png'
+import { useNavigate } from 'react-router-dom'
 
 function Footer() {
+
+  const navigate = useNavigate()
 
   const CustomContainer = styled(Container)(({ theme }) => ({
     display: 'flex',
@@ -86,7 +89,7 @@ function Footer() {
           {
             footerLinks.filter((item) => item.group === 1).map((item, index) => (
               <React.Fragment key={index}>
-                <FooterLinks>{item.display}</FooterLinks>
+                <FooterLinks onClick={()=>navigate(item.path)}>{item.display}</FooterLinks>
                 <br />
               </React.Fragment>
             ))
