@@ -16,8 +16,11 @@ import {
     ListItemIcon,
     ListItemText,
 } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+
+    const navigate = useNavigate()
 
     const [mobileMenu, setMobileMenu] = useState({left:false});
 
@@ -40,7 +43,7 @@ function Header() {
             <List>
                 {
                     nav_titles.map((item, index)=>(
-                        <ListItem key={item.index} disablePadding>
+                        <ListItem key={item.index} disablePadding onClick={()=>navigate(item.path)}>
                     <ListItemButton>
                         <ListItemIcon>
                             {
@@ -155,7 +158,7 @@ function Header() {
                 <NavBarLinksBox>
                     {
                         nav_titles.map((item, index) => (
-                            <NavBarLink variant='body2'>{item.display}</NavBarLink>
+                            <NavBarLink variant='body2' onClick={()=>navigate(item.path)}>{item.display}</NavBarLink>
                         ))
                     }
                 </NavBarLinksBox>
