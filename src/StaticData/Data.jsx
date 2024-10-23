@@ -30,13 +30,4 @@ export const Data = [
         heart: 3,
         share: 3000,
     },
-    {
-        id: '3',
-        img: dish3,
-        price: '4700',
-        item: 'Grilled Shawarma',
-        likes: 4,
-        heart: 3,
-        share: 3000,
-    },
 ];

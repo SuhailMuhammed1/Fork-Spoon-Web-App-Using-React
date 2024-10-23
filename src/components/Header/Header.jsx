@@ -16,7 +16,7 @@ import {
     ListItemIcon,
     ListItemText,
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Header() {
 
@@ -110,6 +110,7 @@ function Header() {
 
     const NavBarLogo = styled("img")(({ theme }) => ({
         cursor: 'pointer',
+        width: '50px',
         [theme.breakpoints.down("md")]: {
             display: 'none',
         },
@@ -153,7 +154,7 @@ function Header() {
                     >
                     {list("left")}
                     </Drawer>
-                    <NavBarLogo src={logo} alt="logo" />
+                    <Link to='/'><NavBarLogo src={logo} alt="logo"/></Link>
                 </Box>
                 <NavBarLinksBox>
                     {

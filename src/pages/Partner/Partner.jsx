@@ -35,7 +35,7 @@ function Partner() {
     <Box sx={{mt: 10}}>
         <CustomConatainer>
             <CustomBox>
-                <img src={logo} alt="logo" style={{maxWidth: '100%'}} />
+                <img src={logo} alt="logo" style={{maxWidth: '100%', width: '50px'}} />
                 <CustomDescription variant='body2'>
                     More than 45,000 trust Fork & Spoon
                 </CustomDescription>
