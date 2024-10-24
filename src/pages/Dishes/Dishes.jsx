@@ -1,5 +1,5 @@
 import React from 'react'
-import { Data } from '../../StaticData/Data'
+import { Data } from '../../ApiService/Data'
 import { Box, styled, Container, Typography } from '@mui/material'
 import CustomCard from '../../components/CustomCard/CustomCard';
 
