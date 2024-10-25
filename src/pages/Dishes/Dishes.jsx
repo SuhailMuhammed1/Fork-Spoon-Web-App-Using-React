@@ -5,7 +5,6 @@ import CustomCard from '../../components/CustomCard/CustomCard';
 
 function Dishes() {
 
-
     const DishesBox = styled(Box)(({ theme }) => ({
         display: 'flex',
         justifyContent: 'space-between',
