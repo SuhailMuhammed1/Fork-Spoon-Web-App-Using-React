@@ -2,7 +2,7 @@ import React from 'react'
 
 function ApiData() {
   return (
-    <div>ApiData</div>
+    <div>api</div>
   )
 }
 
